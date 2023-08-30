@@ -1,4 +1,5 @@
 ::Para hacer los cases
+mkdir cases
 echo 3 > ./cases/1.in
 java Main.java < ./cases/1.in > ./cases/1.out
 
@@ -13,3 +14,4 @@ java Main.java < ./cases/4.in > ./cases/4.out
 
 echo 11 > ./cases/5.in
 java Main.java < ./cases/5.in > ./cases/5.out
+zeverla
