@@ -1,9 +1,9 @@
-
 /*
 Autor: Andres Anguiano
 Fecha: 30/08/2023
-Invertir una cadena dada
+Indicaciones: Invertir una cadena dada
 */
+
 import java.util.Scanner;
 
 public class Main {
@@ -18,10 +18,8 @@ public class Main {
   static void imprimeInverso(String s, int i) {
     if (i == s.length())
       return;
-    else {
-      imprimeInverso(s, i + 1);
-      System.out.print(s.charAt(i));
-    }
+    imprimeInverso(s, i + 1);
+    System.out.print(s.charAt(i));
   }
 
 }
