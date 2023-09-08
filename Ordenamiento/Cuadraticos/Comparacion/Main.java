@@ -14,44 +14,26 @@ public class Main {
     long[] selectionTimes = new long[n];
 
     for (int i = 0; i < n; i++) {
-      int[] temp = fillRandom(500 * (i + 1));
-      bubbleTimes[i] = bubbleSort(temp.clone());
-      insertionTimes[i] = insertionSort(temp.clone());
-      selectionTimes[i] = selectionSort(temp.clone());
+      int[] A = fillRandom(500 * (i + 1));
+      bubbleTimes[i] = bubbleSort(A.clone());
+      insertionTimes[i] = insertionSort(A.clone());
+      selectionTimes[i] = selectionSort(A.clone());
     }
 
-    System.out.println("bubbleSort");
+    System.out.println("bubbleSort:");
     print(bubbleTimes);
-    System.out.println("insertionSort");
+    System.out.println("insertionSort:");
     print(insertionTimes);
-    System.out.println("selectionSort");
+    System.out.println("selectionSort:");
     print(selectionTimes);
-  }
-
-  public static int[] fillRandom(int a)// llena un int[] de tamaño a con valores aleatorios
-  {
-    Random rnd = new Random();
-    int[] temp = new int[a];
-    for (int i = 0; i < a; i++)
-      temp[i] = rnd.nextInt(2147483647);
-    return temp;
-  }
-
-  static void print(long[] A) {
-    for (int i = 0; i < A.length; i++)
-      System.out.println(A[i]);
   }
 
   static long bubbleSort(int[] A) {
     long a = System.currentTimeMillis();
-    int temp = 0;
     for (int i = 0; i < A.length; i++)
       for (int j = 1; j < (A.length - i); j++)
-        if (A[j - 1] > A[j]) {
-          temp = A[j - 1];
-          A[j - 1] = A[j];
-          A[j] = temp;
-        }
+        if (A[j - 1] > A[j])
+          swap(A, j - 1, j);
     long b = System.currentTimeMillis();
     return b - a;
   }
@@ -72,15 +54,34 @@ public class Main {
   static long selectionSort(int[] A) {
     long a = System.currentTimeMillis();
     for (int i = 0; i < A.length; ++i) {
-      int lugar = i;
+      int index = i;
       for (int j = i; j < A.length; ++j)
-        if (A[j] < A[lugar])
-          lugar = j;
-      int guardado = A[i];
-      A[i] = A[lugar];
-      A[lugar] = guardado;
+        if (A[j] < A[index])
+          index = j;
+      swap(A, i, index);
     }
     long b = System.currentTimeMillis();
     return b - a;
+  }
+
+  // util
+  static void swap(int[] A, int i, int j) {
+    int temp = A[i];
+    A[i] = A[j];
+    A[j] = temp;
+  }
+
+  static void print(long[] A) {
+    for (int i = 0; i < A.length; i++)
+      System.out.println(A[i]);
+  }
+
+  public static int[] fillRandom(int a)// llena un int[] de tamaño a con valores aleatorios
+  {
+    Random rnd = new Random();
+    int[] temp = new int[a];
+    for (int i = 0; i < a; i++)
+      temp[i] = rnd.nextInt(Integer.MAX_VALUE);
+    return temp;
   }
 }
