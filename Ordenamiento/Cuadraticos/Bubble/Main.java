@@ -15,7 +15,7 @@ public class Main {
     System.out.println(Arrays.toString(A));
   }
 
-  static void bubbleSort(int[] A) {
+  public static void bubbleSort(int[] A) {
     int temp = 0;
     for (int i = 0; i < A.length; i++)
       for (int j = 1; j < (A.length - i); j++)
@@ -26,8 +26,7 @@ public class Main {
         }
   }
 
-  public static int[] fillRandom(int a)// llena un int[] de tamaño a con valores aleatorios
-  {
+  public static int[] fillRandom(int a) {
     Random rnd = new Random();
     int[] temp = new int[a];
     for (int i = 0; i < a; i++)

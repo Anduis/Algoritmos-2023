@@ -47,8 +47,7 @@ public class Main {
     }
   }
 
-  public static int[] fillRandom(int a)// llena un int[] de tamaño a con valores aleatorios
-  {
+  public static int[] fillRandom(int a) {
     Random rnd = new Random();
     int[] temp = new int[a];
     for (int i = 0; i < a; i++)

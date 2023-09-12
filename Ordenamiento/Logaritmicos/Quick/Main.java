@@ -15,7 +15,7 @@ class Main {
     System.out.println(Arrays.toString(A));
   }
 
-  static void quickSort(int[] A, int s, int e) {
+  public static void quickSort(int[] A, int s, int e) {
     if (s < e) {
       int p = partition(A, s, e);
       quickSort(A, s, p - 1);
@@ -23,7 +23,7 @@ class Main {
     }
   }
 
-  static int partition(int[] A, int s, int e) {
+  public static int partition(int[] A, int s, int e) {
     int p = e;
     int i = (s - 1);
     int j = s;
@@ -36,14 +36,13 @@ class Main {
     return i + 1;
   }
 
-  static void swap(int[] A, int i, int j) {
+  public static void swap(int[] A, int i, int j) {
     int temp = A[i];
     A[i] = A[j];
     A[j] = temp;
   }
 
-  public static int[] fillRandom(int a)// llena un int[] de tamaño a con valores aleatorios
-  {
+  public static int[] fillRandom(int a) {
     Random rnd = new Random();
     int[] temp = new int[a];
     for (int i = 0; i < a; i++)

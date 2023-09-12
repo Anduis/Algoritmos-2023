@@ -28,7 +28,7 @@ public class Main {
     print(selectionTimes);
   }
 
-  static long bubbleSort(int[] A) {
+  public static long bubbleSort(int[] A) {
     long a = System.currentTimeMillis();
     for (int i = 0; i < A.length; i++)
       for (int j = 1; j < (A.length - i); j++)
@@ -38,7 +38,7 @@ public class Main {
     return b - a;
   }
 
-  static long insertionSort(int A[]) {
+  public static long insertionSort(int A[]) {
     long a = System.currentTimeMillis();
     for (int i = 1; i < A.length; ++i) {
       int key = A[i];
@@ -51,7 +51,7 @@ public class Main {
     return b - a;
   }
 
-  static long selectionSort(int[] A) {
+  public static long selectionSort(int[] A) {
     long a = System.currentTimeMillis();
     for (int i = 0; i < A.length; ++i) {
       int index = i;
@@ -65,19 +65,18 @@ public class Main {
   }
 
   // util
-  static void swap(int[] A, int i, int j) {
+  public static void swap(int[] A, int i, int j) {
     int temp = A[i];
     A[i] = A[j];
     A[j] = temp;
   }
 
-  static void print(long[] A) {
+  public static void print(long[] A) {
     for (int i = 0; i < A.length; i++)
       System.out.println(A[i]);
   }
 
-  public static int[] fillRandom(int a)// llena un int[] de tamaño a con valores aleatorios
-  {
+  public static int[] fillRandom(int a) {
     Random rnd = new Random();
     int[] temp = new int[a];
     for (int i = 0; i < a; i++)

@@ -15,7 +15,7 @@ public class Main {
     System.out.println(Arrays.toString(A));
   }
 
-  static void selectionSort(int[] A) {
+  public static void selectionSort(int[] A) {
     for (int i = 0; i < A.length; ++i) {
       int index = i;
       for (int j = i; j < A.length; ++j)
@@ -27,8 +27,7 @@ public class Main {
     }
   }
 
-  public static int[] fillRandom(int a)// llena un int[] de tamaño a con valores aleatorios
-  {
+  public static int[] fillRandom(int a) {
     Random rnd = new Random();
     int[] temp = new int[a];
     for (int i = 0; i < a; i++)

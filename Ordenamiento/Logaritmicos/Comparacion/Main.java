@@ -14,18 +14,18 @@ public class Main {
     long[] heapTimes = new long[n];
 
     for (int i = 0; i < n; i++) {
-      int[] temp = fillRandom(200000 * (i + 1));
+      int[] A = fillRandom(200000 * (i + 1));
 
       long tQ = System.currentTimeMillis();
-      quickSort(temp.clone(), 0, temp.length - 1);
+      quickSort(A.clone(), 0, A.length - 1);
       quickTimes[i] = System.currentTimeMillis() - tQ;
 
       long tM = System.currentTimeMillis();
-      mergeSort(temp.clone(), 0, temp.length - 1);
+      mergeSort(A.clone(), 0, A.length - 1);
       mergeTimes[i] = System.currentTimeMillis() - tM;
 
       long tH = System.currentTimeMillis();
-      heapSort(temp.clone());
+      heapSort(A.clone());
       heapTimes[i] = System.currentTimeMillis() - tH;
     }
 
@@ -38,7 +38,7 @@ public class Main {
   }
 
   // QUICKSORT
-  static void quickSort(int[] A, int s, int e) {
+  public static void quickSort(int[] A, int s, int e) {
     if (s < e) {
       int p = partition(A, s, e);
       quickSort(A, s, p - 1);
@@ -46,7 +46,7 @@ public class Main {
     }
   }
 
-  static int partition(int[] A, int s, int e) {
+  public static int partition(int[] A, int s, int e) {
     int p = e;
     int i = (s - 1);
     int j = s;
@@ -117,14 +117,13 @@ public class Main {
   }
 
   // util
-  static void swap(int[] A, int i, int j) {
+  public static void swap(int[] A, int i, int j) {
     int temp = A[i];
     A[i] = A[j];
     A[j] = temp;
   }
 
-  public static int[] fillRandom(int a)// llena un int[] de tamaño a con valores aleatorios
-  {
+  public static int[] fillRandom(int a) {
     Random rnd = new Random();
     int[] temp = new int[a];
     for (int i = 0; i < a; i++)
@@ -132,7 +131,7 @@ public class Main {
     return temp;
   }
 
-  static void print(long[] A) {
+  public static void print(long[] A) {
     for (int i = 0; i < A.length; i++)
       System.out.println(A[i]);
   }
