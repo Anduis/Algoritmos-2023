@@ -1,0 +1,1 @@
+Some of the first exercises of the Algorithms class in the Faculty of Physical and Mathematical Sciences, such class in which I am helping as a volunteer, trying to give a closer teaching support to my fellow students into their first approach to making their own code and developing the required logic.
