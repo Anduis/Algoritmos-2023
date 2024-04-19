@@ -1,0 +1,30 @@
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+public static void main(String[] args)
+{
+  Lista L = new Lista();
+  L = L.llenaAleatorioLista(10);
+  System.out.println("*-*-*-*-*-*-*-*");
+  System.out.println("longitud lista: " + L.getTam());
+  System.out.println("head de lista : " + L.getTop().getElemento());
+  System.out.println("maximo en la lista : " + L.maximum(L.getTop()).getElemento());
+  System.out.println("minimo en la lista : " + L.minimum(L.getTop()).getElemento());
+  System.out.println("successor del minimo : " + L.successor(L.search(L.minimum(L.getTop()).getElemento())).getElemento());
+  System.out.println("predecessor del maximo : " + L.predecessor(L.search(L.maximum(L.getTop()).getElemento())).getElemento());
+  System.out.println("lista: ");
+  L.imprime();
+
+  System.out.println("lista ordenada: ");
+  L.setTop(L.mergeSort(L.getTop(),L.getTam()));
+  L.imprime();
+}
+
+Lista llenaAleatorioLista(int a)
+{
+  Lista L = new Lista();
+  Random aleatorio = new Random();
+  for(int i = 0 ; i < a ; i++)
+  {
+    L.insert(new Nodo(aleatorio.nextInt(a)));
+  }
+  return L;
+}
