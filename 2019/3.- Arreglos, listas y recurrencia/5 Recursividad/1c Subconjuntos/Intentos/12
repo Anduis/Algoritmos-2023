@@ -1,0 +1,29 @@
+/*
+*Autor: Andres Anguiano 1638975x
+Fecha: 8 Abril 2020
+**INDICACIONES DADAS:
+**Aplicación Subconjuntos la cual genera todos los subconjuntos de un conjuntos de n elementos
+**(sin repetir ningún subconjunto)
+*/
+public class Subconjuntos{
+  public static void main(String[] args) {
+    String[] conjunto ={"a","b","c","d","e"};
+  //  String[] conjunto ={"a","b","c"};
+    String[] subs = new String[15];
+    subconjuntosCon(0,conjunto,0,subs,15);
+    for (int i=0; i<subs.length ;i++ ) {
+      System.out.println(subs[i]);
+    }
+  }
+  public static void subconjuntosCon(int x, String[] arreglo, int contador,String[] th,int total){//A,conjunto,contrador,donde va a guardar
+    int i=contador;
+    int j=total
+    if (i==0) th[i]=arreglo[i];
+    if (arreglo[x]!=arreglo[i]) th[i]=arreglo[x]+arreglo[i];
+    i++;
+    if (j<arreglo.length) {
+    if (i!=arreglo.length) subconjuntosCon(x,arreglo,i,th);
+    }
+    //if (i==arreglo.length) subconjuntosCon(x+i,arreglo,0,th);
+  }
+}
